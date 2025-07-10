@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financo Dashboard</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/output.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <div class="flex h-screen">
+        <aside class="w-64 bg-gray-800 p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center mb-10">
+                    <span class="text-xl font-bold text-purple-500 mr-2">F</span>
+                    <h1 class="text-white text-lg font-semibold">FINANCO</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="mb-4">
+                            <a href="#" class="flex items-center p-3 rounded-lg bg-purple-600 text-white">
+                                <i class="fas fa-th-large mr-3"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="flex items-center p-3 rounded-lg text-gray-400 hover:bg-gray-700">
+                                <i class="fas fa-credit-card mr-3"></i>
+                                <span>Cards</span>
+                            </a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="flex items-center p-3 rounded-lg text-gray-400 hover:bg-gray-700">
+                                <i class="fas fa-exchange-alt mr-3"></i>
+                                <span>Transactions</span>
+                            </a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="flex items-center p-3 rounded-lg text-gray-400 hover:bg-gray-700">
+                                <i class="fas fa-chart-line mr-3"></i>
+                                <span>Reporting</span>
+                            </a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="flex items-center p-3 rounded-lg text-gray-400 hover:bg-gray-700">
+                                <i class="fas fa-question-circle mr-3"></i>
+                                <span>Help & Support</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg text-sm text-gray-300">
+                <h3 class="font-semibold mb-2">Used Space</h3>
+                <p class="text-gray-400 mb-2">Your team has used 80% of available space. Need More?</p>
+                <button class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md">Upgrade Plan</button>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-6 overflow-auto">
+            <header class="flex justify-between items-center mb-6">
+                <div class="relative flex items-center bg-gray-800 rounded-md p-2 w-72">
+                    <i class="fas fa-search text-gray-400 ml-2 mr-3"></i>
+                    <input type="text" placeholder="Search..." class="bg-transparent outline-none text-white placeholder-gray-400 flex-1">
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-400">Welcome Back, John!</span>
+                    <div class="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center text-white">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </header>
+
+            <h2 class="text-2xl font-semibold mb-6">Banking Dashboard</h2>
+
+            <div class="flex justify-end mb-6 space-x-2">
+                <button class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm">12 Months</button>
+                <button class="bg-gray-800 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-700">30 days</button>
+                <button class="bg-gray-800 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-700">7 days</button>
+                <button class="bg-gray-800 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-700">24 hours</button>
+                <button class="bg-gray-800 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-700">
+                    <i class="fas fa-filter mr-1"></i>Filters
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                <div class="col-span-1 bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold">Primary Account</h3>
+                        <i class="fas fa-ellipsis-h text-gray-400"></i>
+                    </div>
+                    <div class="relative w-full h-48 rounded-lg overflow-hidden bg-gradient-to-br from-purple-600 to-indigo-800 flex flex-col justify-between p-4 shadow-lg">
+                        <div class="flex justify-between items-start">
+                            <span class="text-white text-xl font-bold">**** **** **** 1121</span>
+                            <i class="fab fa-cc-visa text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-200 text-sm">John Lewis</p>
+                            <div class="flex justify-between text-gray-200 text-xs mt-1">
+                                <span>12/21</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-1 bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold">Total Income</h3>
+                        <span class="text-gray-400 text-sm">August 2023</span>
+                    </div>
+                    <p class="text-3xl font-bold text-green-400 mb-4">$612,600</p>
+                    <div class="w-full h-24 bg-gradient-to-r from-green-500 to-green-300 rounded-lg opacity-70"></div>
+                </div>
+
+                <div class="col-span-1 bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold">Total Expends</h3>
+                        <span class="text-gray-400 text-sm">August 2023</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <p class="text-3xl font-bold text-red-400 mb-4">$561.34</p>
+                        <span class="text-red-400 text-sm mb-4">0.4% <i class="fas fa-caret-down"></i></span>
+                    </div>
+                    <div class="w-full h-24 bg-gradient-to-r from-red-500 to-red-300 rounded-lg opacity-70"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold mb-4">Money Flow</h3>
+                    <div class="flex justify-end text-sm mb-4 space-x-4">
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-purple-600 rounded-full mr-2"></span>
+                            <span>Profit</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                            <span>Income</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
+                            <span>Expend</span>
+                        </div>
+                    </div>
+                    <div class="h-64 flex items-end justify-between border-b border-l border-gray-700 pb-2 pl-2">
+                        <div class="flex flex-col h-full justify-end">
+                            <span class="text-gray-500 text-xs mb-1 -ml-6">1000</span>
+                            <span class="text-gray-500 text-xs mb-1 -ml-6">800</span>
+                            <span class="text-gray-500 text-xs mb-1 -ml-6">600</span>
+                            <span class="text-gray-500 text-xs mb-1 -ml-6">400</span>
+                            <span class="text-gray-500 text-xs mb-1 -ml-6">200</span>
+                            <span class="text-gray-500 text-xs mb-1 -ml-6">0</span>
+                        </div>
+                        <div class="flex flex-1 justify-around h-full items-end">
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-2/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-1/2 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-1/4 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Jan</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-1/2 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-3/4 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-1/3 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Feb</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-3/4 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-1/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-2/3 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Mar</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-1/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-2/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-1/2 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Apr</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-2/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-1/2 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-1/4 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">May</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-1/2 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-3/4 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-1/3 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Jun</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-3/4 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-1/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-2/3 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Jul</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-1/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-2/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-1/2 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Aug</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-2/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-1/2 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-1/4 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Sep</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-1/2 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-3/4 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-1/3 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Oct</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-3/4 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-1/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-2/3 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Nov</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 bg-purple-600 h-1/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-green-500 h-2/3 rounded-t-sm"></div>
+                                <div class="w-4 bg-red-500 h-1/2 rounded-t-sm"></div>
+                                <span class="text-gray-400 text-xs mt-1">Dec</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold mb-4">Recent Transactions</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-700 last:border-b-0">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+                                    <i class="fab fa-cc-visa text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Internal Payment</p>
+                                    <span class="text-gray-400 text-sm">VISA</span>
+                                </div>
+                            </div>
+                            <span class="text-green-400 font-semibold">+$160.00</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-700 last:border-b-0">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center mr-3">
+                                    <i class="fas fa-credit-card text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Internal Payment</p>
+                                    <span class="text-gray-400 text-sm">MasterCard</span>
+                                </div>
+                            </div>
+                            <span class="text-red-400 font-semibold">-$40.00</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-700 last:border-b-0">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center mr-3">
+                                    <i class="fab fa-paypal text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Internal Payment</p>
+                                    <span class="text-gray-400 text-sm">PayPal</span>
+                                </div>
+                            </div>
+                            <span class="text-green-400 font-semibold">+$160.00</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-700 last:border-b-0">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center mr-3">
+                                    <i class="fab fa-apple-pay text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Internal Payment</p>
+                                    <span class="text-gray-400 text-sm">ApplePay</span>
+                                </div>
+                            </div>
+                            <span class="text-red-400 font-semibold">-$40.00</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-700 last:border-b-0">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center mr-3">
+                                    <i class="fab fa-google-pay text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Internal Payment</p>
+                                    <span class="text-gray-400 text-sm">GooglePay</span>
+                                </div>
+                            </div>
+                            <span class="text-green-400 font-semibold">+$160.00</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2 last:border-b-0">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+                                    <i class="fab fa-cc-visa text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Internal Payment</p>
+                                    <span class="text-gray-400 text-sm">VISA</span>
+                                </div>
+                            </div>
+                            <span class="text-red-400 font-semibold">-$80.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

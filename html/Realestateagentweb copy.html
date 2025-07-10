@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Better Living Property</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+      }
+      /* Custom styles for the hero section background to ensure full coverage and responsiveness */
+      .hero-background {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh; /* Ensure it covers at least the full viewport height */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      /* Overlay for better text readability on hero image */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+      }
+      /* Custom blur background for header */
+      .header-blur-bg {
+        backdrop-filter: blur(8px); /* Apply blur effect */
+        background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+      }
+      /* Custom blur background for mobile menu */
+      .mobile-menu-blur-bg {
+        backdrop-filter: blur(8px); /* Apply blur effect */
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="bg-transparent">
+      <header
+        class="header-blur-bg fixed inset-x-0 top-0 z-50 rounded-b-lg shadow-md"
+      >
+        <div
+          class="relative isolate flex items-center gap-x-6 overflow-hidden px-6 py-2.5 sm:px-3.5"
+        >
+          <div
+            class="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
+            aria-hidden="true"
+          >
+            <div
+              class="aspect-577/310 w-[36.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+              style="
+                clip-path: polygon(
+                  74.8% 41.9%,
+                  97.2% 73.2%,
+                  100% 34.9%,
+                  92.5% 0.4%,
+                  87.5% 0%,
+                  75% 28.6%,
+                  58.5% 54.6%,
+                  50.1% 56.8%,
+                  46.9% 44%,
+                  48.3% 17.4%,
+                  24.7% 53.9%,
+                  0% 27.9%,
+                  11.9% 74.2%,
+                  24.9% 54.1%,
+                  68.6% 100%,
+                  74.8% 41.9%
+                );
+              "
+            ></div>
+          </div>
+          <div
+            class="absolute top-1/2 left-[max(45rem,calc(50%+8rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
+            aria-hidden="true"
+          >
+            <div
+              class="aspect-577/310 w-[36.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+              style="
+                clip-path: polygon(
+                  74.8% 41.9%,
+                  97.2% 73.2%,
+                  100% 34.9%,
+                  92.5% 0.4%,
+                  87.5% 0%,
+                  75% 28.6%,
+                  58.5% 54.6%,
+                  50.1% 56.8%,
+                  46.9% 44%,
+                  48.3% 17.4%,
+                  24.7% 53.9%,
+                  0% 27.9%,
+                  11.9% 74.2%,
+                  24.9% 54.1%,
+                  68.6% 100%,
+                  74.8% 41.9%
+                );
+              "
+            ></div>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p class="text-sm/6 text-gray-900">
+              <strong class="font-semibold">GeneriCon 2023</strong>
+              <svg
+                viewBox="0 0 2 2"
+                class="mx-2 inline size-0.5 fill-current"
+                aria-hidden="true"
+              >
+                <circle cx="1" cy="1" r="1" />
+              </svg>
+              Join us in Denver from June 7 – 9 to see what is coming next.
+            </p>
+            <a
+              href="#"
+              class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+            >
+              Register now <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+          <div class="flex flex-1 justify-end">
+            <button
+              type="button"
+              class="-m-3 p-3 focus-visible:outline-offset-4"
+              id="dismiss-banner"
+            >
+              <span class="sr-only">Dismiss</span>
+              <svg
+                class="size-5 text-gray-900"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <nav
+          class="flex items-center justify-between p-4 lg:px-8"
+          aria-label="Global"
+        >
+          <div class="flex lg:flex-1">
+            <a href="Realestateagentweb copy.html" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img
+                class="h-14 w-14 rounded-full object-cover shadow-md"
+                src="https://i.pinimg.com/736x/b4/ce/59/b4ce598d128bf1b3c5da0f1e1d089cc9.jpg"
+                alt="Company Logo"
+                onerror="this.onerror=null;this.src='https://placehold.co/56x56/E0E0E0/333333?text=Logo';"
+              />
+            </a>
+          </div>
+          <div class="flex lg:hidden">
+            <button
+              type="button"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              id="open-mobile-menu"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-12">
+            <a
+              href="house.html"  class="text-sm font-semibold leading-6 text-gray-900 hover:text-amber-600 transition-colors duration-200"
+      >House</a>
+            <a
+              href="villa.html"  class="text-sm font-semibold leading-6 text-gray-900 hover:text-amber-600 transition-colors duration-200"
+      >Villa</a>
+            <a
+              href="#"
+              class="text-sm font-semibold leading-6 text-gray-900 hover:text-amber-600 transition-colors duration-200"
+              >Marketplace</a
+            >
+            <a
+              href="#"
+              class="text-sm font-semibold leading-6 text-gray-900 hover:text-amber-600 transition-colors duration-200"
+              >Company</a
+            >
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a
+              href="contactsale.html"
+              class="text-sm font-semibold leading-6 text-white bg-indigo-600 px-4 py-2 rounded-full shadow-md hover:bg-indigo-700 transition-colors duration-200"
+            >
+              Contact Sale <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </nav>
+
+        <div
+          class="fixed inset-0 z-50 hidden"
+          role="dialog"
+          aria-modal="true"
+          id="mobile-menu-overlay"
+        >
+          <div class="fixed inset-0 bg-gray-900/80"></div>
+          <div
+            class="mobile-menu-blur-bg fixed inset-y-0 right-0 z-50 w-full overflow-y-auto p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 rounded-l-lg shadow-lg"
+          >
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <img
+                  class="h-14 w-14 rounded-full object-cover shadow-md"
+                  src="https://i.pinimg.com/736x/b4/ce/59/b4ce598d128bf1b3c5da0f1e1d089cc9.jpg"
+                  alt="Company Logo"
+                  onerror="this.onerror=null;this.src='https://placehold.co/56x56/E0E0E0/333333?text=Logo';"
+                />
+              </a>
+              <button
+                type="button"
+                class="-m-2.5 rounded-md p-2.5 text-gray-700"
+                id="close-mobile-menu"
+              >
+                <span class="sr-only">Close menu</span>
+                <svg
+                  class="size-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <a
+                    href="house.html"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors duration-200"
+                    >House</a
+                  >
+                  <a
+                    href="villa.html"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors duration-200"
+                    >Vila</a
+                  >
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors duration-200"
+                    >About Us</a
+                  >
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors duration-200"
+                    >Contact</a
+                  >
+                </div>
+                <div class="py-6">
+                  <a
+                    href="contactsale.html"
+                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors duration-200"
+                    >Contact Sale</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div
+        class="hero-background relative px-6 pt-14 lg:px-8"
+        style="
+          background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg');
+        "
+      >
+        <div class="hero-overlay rounded-b-xl"></div>
+        <div
+          class="relative z-10 mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 text-center"
+        >
+          <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div
+              class="relative rounded-full px-3 py-1 text-sm leading-6 text-white ring-1 ring-gray-300/50 hover:ring-gray-100/50 transition-all duration-200 shadow-md">
+              Announcing our next round of funding.
+              <a
+                href="#"
+                class="font-semibold text-indigo-300 hover:text-indigo-200 transition-colors duration-200">
+                <span class="absolute inset-0" aria-hidden="true"></span>Read
+                more <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+          <h1
+            class="text-5xl font-extrabold tracking-tight text-white sm:text-7xl leading-tight">
+            Make The Better Living With Us
+          </h1>
+          <p class="mt-6 text-lg leading-8 text-gray-200 sm:text-xl">
+            The happiness of customer is our mission.
+            <br class="hidden sm:inline" />Living in a comfortable zone is the
+            best place ever.
+          </p>
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a
+              href="contactsale.html"
+              class="rounded-md bg-indigo-600 px-4 py-2.5 text-base font-semibold text-white shadow-lg hover:bg-indigo-700  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-200 transform hover:scale-105"
+            >
+              Contact Sale
+            </a>
+            <a
+              href=""
+              class="text-base font-semibold leading-6 text-white hover:text-gray-200 transition-colors duration-200"
+            >
+              Learn more <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+<section class="bg-white py-16 sm:py-24 rounded-t-xl shadow-inner">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <h2 class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-12">
+              Our Project  
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div data-aos="fade-right" data-aos-duration="1000">
+                <img src="https://i.pinimg.com/736x/61/3e/40/613e405ac48ee056c9531be2a3fe4249.jpg" alt="Iamge property 1" class="w-full h-auto object-cover rounded-lg shadow-md">
+              </div>
+              <div data-aos="fade-left" data-aos-duration="1000">
+                <img src="https://i.pinimg.com/736x/f7/50/5f/f7505f10816dc18dae943ab51e98ac10.jpg" alt="image property 2" class="w-full h-auto object-cover rounded-lg shadow-md">
+              </div>
+            </div>
+        </div>
+      </section>
+      
+      <section class="bg-white py-16 sm:py-24 rounded-t-xl shadow-inner">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2
+            class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-12">
+            Our Team
+          </h2>
+          <div class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-4">
+            <div
+              class="flex flex-col items-center text-center p-8 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <img
+                class="size-24 rounded-full object-cover mb-6 border-4 border-indigo-500 shadow-sm"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt="Leslie Alexander"
+                onerror="this.onerror=null;this.src='https://placehold.co/96x96/E0E0E0/333333?text=User1';"
+              />
+              <blockquote class="text-lg leading-7 text-gray-700 mb-4 italic">
+                "This company has transformed my living space! The attention to
+                detail and customer service are unparalleled. Highly recommend!"
+              </blockquote>
+              <p class="text-base font-semibold leading-6 text-gray-900">
+                Leslie Alexander
+              </p>
+              <p class="text-sm leading-6 text-indigo-600">Co-Founder / CEO</p>
+            </div>
+            <div
+              class="flex flex-col items-center text-center p-8 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <img
+                class="size-24 rounded-full object-cover mb-6 border-4 border-indigo-500 shadow-sm"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt="Michael Foster"
+                onerror="this.onerror=null;this.src='https://placehold.co/96x96/E0E0E0/333333?text=User2';"
+              />
+              <blockquote class="text-lg leading-7 text-gray-700 mb-4 italic">
+                "Exceptional quality and a truly comfortable experience. My home
+                feels brand new, thanks to their dedicated team."
+              </blockquote>
+              <p class="text-base font-semibold leading-6 text-gray-900">
+                Michael Foster
+              </p>
+              <p class="text-sm leading-6 text-indigo-600">CTO</p>
+            </div>
+            <div
+              class="flex flex-col items-center text-center p-8 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <img
+                class="size-24 rounded-full object-cover mb-6 border-4 border-indigo-500 shadow-sm"
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt="Dries Vincent"
+                onerror="this.onerror=null;this.src='https://placehold.co/96x96/E0E0E0/333333?text=User3';"
+              />
+              <blockquote class="text-lg leading-7 text-gray-700 mb-4 italic">
+                "From start to finish, the process was seamless. They truly care
+                about creating better living spaces. Highly satisfied!"
+              </blockquote>
+              <p class="text-base font-semibold leading-6 text-gray-900">
+                Dries Vincent
+              </p>
+              <p class="text-sm leading-6 text-indigo-600">Marketing Lead</p>
+            </div>
+            <div
+              class="flex flex-col items-center text-center p-8 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <img
+                class="size-24 rounded-full object-cover mb-6 border-4 border-indigo-500 shadow-sm"
+                src="../photo/2025-07-01 19.21.12.jpg"
+                alt="So Samponleu"
+                onerror="this.onerror=null;this.src='https://placehold.co/96x96/E0E0E0/333333?text=User4';"
+              />
+              <blockquote class="text-lg leading-7 text-gray-700 mb-4 italic">
+                "God wants you to grow, so he breaks you first."
+              </blockquote>
+              <p class="text-base font-semibold leading-6 text-gray-900">
+                So Samponleu
+              </p>
+              <p class="text-sm leading-6 text-indigo-600">Chairman</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-12">
+     <div
+        class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8"
+      >
+      <div class="md:col-span-1">
+          <a href="#" class="flex items-center space-x-3 mb-4">
+            <img
+              class="h-12 w-12 rounded-lg object-cover shadow-md"
+              src="https://i.pinimg.com/736x/b4/ce/59/b4ce598d128bf1b3c5da0f1e1d089cc9.jpg"
+              alt="Company Logo"
+              onerror="this.onerror=null;this.src='https://placehold.co/48x48/E0E0E0/333333?text=Logo';"
+            />
+            <span class="text-xl font-bold">Better Living</span>
+          </a>
+          <p class="text-gray-400 text-sm">
+            Creating comfortable and beautiful living spaces for a better life.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li>Email: so.samponleu89@gmail.com</li>
+            <li>Phone: (855) 89 24 64 24</li>
+            <li>Address: Cambodia</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <svg
+                class="size-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <svg
+                class="size-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <svg
+                class="size-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.483 2.943 8.263 6.958 9.537.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.857.62-3.46-1.378-3.46-1.378-.454-1.157-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.82c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.397.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.578.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 border-t border-gray-800 pt-8 text-center text-sm text-gray-500"
+      >
+        <p>&copy; 2025 Better Living. All rights reserved.</p>
+      </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+      // Initialize AOS
+      AOS.init();
+
+      // JavaScript for mobile menu toggle
+      document
+        .getElementById("open-mobile-menu")
+        .addEventListener("click", function () {
+          document
+            .getElementById("mobile-menu-overlay")
+            .classList.remove("hidden");
+        });
+
+      document
+        .getElementById("close-mobile-menu")
+        .addEventListener("click", function () {
+          document
+            .getElementById("mobile-menu-overlay")
+            .classList.add("hidden");
+        });
+
+      // JavaScript for dismissing the top banner
+      document
+        .getElementById("dismiss-banner")
+        .addEventListener("click", function () {
+          this.closest(".relative.isolate.flex").style.display = "none";
+        });
+    </script>
+  </body>
+</html>
