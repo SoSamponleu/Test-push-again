@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Houses - Better Living</title>
+    <link rel="stylesheet" href="../css/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .header-blur-bg {
+        backdrop-filter: blur(8px);
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      .modal {
+        transition: opacity 0.25s ease;
+      }
+      body.modal-active {
+        overflow-x: hidden;
+        overflow-y: visible !important;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <header class="header-blur-bg sticky top-0 z-50 rounded-b-lg shadow-md">
+      <nav
+        class="flex items-center justify-between p-4 lg:px-8"
+        aria-label="Global"
+      >
+        <div class="flex lg:flex-1">
+          <a href="Realestateagentweb copy.html" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img
+              class="h-14 w-14 rounded-full object-cover shadow-md"
+              src="https://i.pinimg.com/736x/b4/ce/59/b4ce598d128bf1b3c5da0f1e1d089cc9.jpg"
+              alt="Company Logo"
+            />
+          </a>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a
+            href="house.html"
+            class="text-sm font-bold text-amber-600 leading-6"
+            >House</a
+          >
+          <a
+            href="villa.html"
+            class="text-sm font-semibold leading-6 text-gray-900 hover:text-amber-600"
+            >Villa</a
+          >
+          <a
+            href="#"
+            class="text-sm font-semibold leading-6 text-gray-900 hover:text-amber-600"
+            >Marketplace</a
+          >
+          <a
+            href="#"
+            class="text-sm font-semibold leading-6 text-gray-900 hover:text-amber-600"
+            >Company</a
+          >
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a
+            href="contactsale.html"
+            class="text-sm font-semibold leading-6 text-white bg-indigo-600 px-4 py-2 rounded-full shadow-md hover:bg-indigo-700"
+          >
+            Contact Sale <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="py-12">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl text-center mb-12">
+          Explore Our Houses
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+            <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" alt="Modern Family Home" class="w-full h-56 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-900">Modern Family Home</h3>
+              <p class="text-indigo-600 font-medium mt-1">Phnom Penh</p>
+              <p class="text-gray-600 mt-2">A beautiful and spacious home perfect for a growing family, featuring a large backyard.</p>
+              <div class="mt-4 flex justify-between items-center">
+                <span class="text-xl font-bold text-gray-900">$250,000</span>
+                <button onclick="openModal('modern-family-home')" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" alt="Cozy Suburban House" class="w-full h-56 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-900">Cozy Suburban House</h3>
+              <p class="text-indigo-600 font-medium mt-1">Siem Reap</p>
+              <p class="text-gray-600 mt-2">Charming and cozy, this house offers a peaceful retreat from the city hustle.</p>
+              <div class="mt-4 flex justify-between items-center">
+                <span class="text-xl font-bold text-gray-900">$180,000</span>
+                <button onclick="openModal('cozy-suburban-house')" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+            <img src="https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg" alt="Urban Townhouse" class="w-full h-56 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-900">Urban Townhouse</h3>
+              <p class="text-indigo-600 font-medium mt-1">Phnom Penh</p>
+              <p class="text-gray-600 mt-2">Stylish and modern townhouse located in the heart of the city, close to all amenities.</p>
+              <div class="mt-4 flex justify-between items-center">
+                <span class="text-xl font-bold text-gray-900">$320,000</span>
+                <button onclick="openModal('urban-townhouse')" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="modern-family-home" class="modal-container hidden fixed inset-0 z-50 overflow-auto bg-gray-900 bg-opacity-50 flex items-center justify-center">
+      <div class="bg-white rounded-lg shadow-2xl w-11/12 md:max-w-2xl mx-auto p-6 relative">
+        <button onclick="closeModal('modern-family-home')" class="absolute top-4 right-4 text-gray-600 hover:text-gray-900">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Modern Family Home</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg" alt="Living Room" class="rounded-lg shadow-md mb-4">
+            <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg" alt="Dining Area" class="rounded-lg shadow-md">
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Interior & Layout</h3>
+            <p class="text-gray-600 mb-4">This home boasts an open-concept living area with high ceilings and large windows that flood the space with natural light. The ground floor features a gourmet kitchen with stainless steel appliances, a spacious living room, and a formal dining area. Upstairs, you'll find four bedrooms, including a master suite with a private balcony and a spa-like ensuite bathroom.</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Key Features</h3>
+            <ul class="list-disc list-inside text-gray-600 space-y-1">
+              <li>4 Bedrooms, 3 Bathrooms</li>
+              <li>Large backyard with a patio</li>
+              <li>2-car garage</li>
+              <li>Hardwood flooring throughout</li>
+              <li>Smart home integration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="cozy-suburban-house" class="modal-container hidden fixed inset-0 z-50 overflow-auto bg-gray-900 bg-opacity-50 flex items-center justify-center">
+      <div class="bg-white rounded-lg shadow-2xl w-11/12 md:max-w-2xl mx-auto p-6 relative">
+        <button onclick="closeModal('cozy-suburban-house')" class="absolute top-4 right-4 text-gray-600 hover:text-gray-900">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Cozy Suburban House</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <img src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg" alt="Cozy Living Room" class="rounded-lg shadow-md mb-4">
+            <img src="https://images.pexels.com/photos/279648/pexels-photo-279648.jpeg" alt="Bedroom" class="rounded-lg shadow-md">
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Interior & Layout</h3>
+            <p class="text-gray-600 mb-4">Experience the warmth of this charming home with its inviting fireplace and comfortable living spaces. The layout includes a cozy living room, a well-equipped kitchen with a breakfast nook, and three lovely bedrooms. The large windows overlook a beautifully landscaped garden, creating a serene and private atmosphere.</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Key Features</h3>
+            <ul class="list-disc list-inside text-gray-600 space-y-1">
+              <li>3 Bedrooms, 2 Bathrooms</li>
+              <li>Landscaped garden and front porch</li>
+              <li>Fireplace in the living room</li>
+              <li>Quiet, family-friendly neighborhood</li>
+              <li>Close to local parks and schools</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="urban-townhouse" class="modal-container hidden fixed inset-0 z-50 overflow-auto bg-gray-900 bg-opacity-50 flex items-center justify-center">
+      <div class="bg-white rounded-lg shadow-2xl w-11/12 md:max-w-2xl mx-auto p-6 relative">
+        <button onclick="closeModal('urban-townhouse')" class="absolute top-4 right-4 text-gray-600 hover:text-gray-900">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Urban Townhouse</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <img src="https://images.pexels.com/photos/6585756/pexels-photo-6585756.jpeg" alt="Modern Kitchen" class="rounded-lg shadow-md mb-4">
+            <img src="https://images.pexels.com/photos/5998120/pexels-photo-5998120.jpeg" alt="Rooftop Terrace" class="rounded-lg shadow-md">
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Interior & Layout</h3>
+            <p class="text-gray-600 mb-4">This multi-level townhouse offers a sleek and contemporary design perfect for city living. The main level features an open-plan living and dining area with a state-of-the-art kitchen. The upper levels house three bedrooms, each with ample closet space. A private rooftop terrace provides stunning city views and an ideal space for entertaining.</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Key Features</h3>
+            <ul class="list-disc list-inside text-gray-600 space-y-1">
+              <li>3 Bedrooms, 2.5 Bathrooms</li>
+              <li>Private rooftop terrace</li>
+              <li>Secure underground parking</li>
+              <li>Floor-to-ceiling windows</li>
+              <li>Walking distance to shops and restaurants</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-12">
+     <div
+        class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8"
+      >
+      <div class="md:col-span-1">
+          <a href="#" class="flex items-center space-x-3 mb-4">
+            <img
+              class="h-12 w-12 rounded-lg object-cover shadow-md"
+              src="https://i.pinimg.com/736x/b4/ce/59/b4ce598d128bf1b3c5da0f1e1d089cc9.jpg"
+              alt="Company Logo"
+              onerror="this.onerror=null;this.src='https://placehold.co/48x48/E0E0E0/333333?text=Logo';"
+            />
+            <span class="text-xl font-bold">Better Living</span>
+          </a>
+          <p class="text-gray-400 text-sm">
+            Creating comfortable and beautiful living spaces for a better life.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li>Email: so.samponleu89@gmail.com</li>
+            <li>Phone: (855) 89 24 64 24</li>
+            <li>Address: Cambodia</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <svg
+                class="size-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <svg
+                class="size-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <svg
+                class="size-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.483 2.943 8.263 6.958 9.537.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.857.62-3.46-1.378-3.46-1.378-.454-1.157-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.82c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.397.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.578.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 border-t border-gray-800 pt-8 text-center text-sm text-gray-500"
+      >
+        <p>&copy; 2025 Better Living. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      function openModal(modalId) {
+        document.getElementById(modalId).classList.remove('hidden');
+        document.body.classList.add('modal-active');
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+        document.body.classList.remove('modal-active');
+      }
+    </script>
+  </body>
+</html>
